@@ -1,29 +1,65 @@
 # Assignment 1: Design a Logical Model
 
+- Participant Name: Charles Colaco
+
 ## Question 1
+
 Create a logical model for a small bookstore. 📚
 
 At the minimum it should have employee, order, sales, customer, and book entities (tables). Determine sensible column and table design based on what you know about these concepts. Keep it simple, but work out sensible relationships to keep tables reasonably sized. Include a date table. There are several tools online you can use, I'd recommend [_Draw.io_](https://www.drawio.com/) or [_LucidChart_](https://www.lucidchart.com/pages/).
 
+![image info](./images/Answer1.jpg)
+
 ## Question 2
+
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
 
+![image info](./images/Answer2.jpg)
+
 ## Question 3
+
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2?
 
 _Hint, search type 1 vs type 2 slowly changing dimensions._
 
 Bonus: Are there privacy implications to this, why or why not?
+
 ```
-Your answer...
+![image info](./images/Answer3.jpg)
+
+There are privacy concerns in both the architectures:
+
+- Unauthorized personal should not have access to this data, as it is sensitive, and has private information.
+- Data leaks can be a concern.
+- In Type2, there is excess information, that most likely is not relevant to the bookstore's operations.
+There is no need to store customers past addresses, any malicious enity can exploit this information.
 ```
 
 ## Question 4
+
 Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 
 Highlight at least two differences between it and your ERD. Would you change anything in yours?
+
 ```
-Your answer...
+There are several differences between the AdventureWorks Schema and the bookstore schema
+# Scope
+- The bookstore schema's scope is limited to a simplistic system which can accommodate minimalistic daily operations
+- The AdventureWorks schema is more complex and can accommodate more business domains such as production, purchasing, human resources
+
+# Complexity
+- The bookstore schema is very simple with 9 entities, for a very specific use case
+- The AdventureWorks schema, comparatively has many tables covering more business areas, like suppliers, categories
+
+
+## Proposed changes to the bookstore Schema
+- Create separate entities for Genres, Publishers
+- Create separate entity for inventory
+- Creat separate entity for job title/role
+- Provisions for tax calculations (HST & GST taxes for different provinces)
+- Entity to store Membership/Loyalty information for cutomers
+- Payment method Entity
+- Promotions Entity
 ```
 
 # Criteria
@@ -35,15 +71,17 @@ Your answer...
 🚨 **Please review our [Assignment Submission Guide](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md)** 🚨 for detailed instructions on how to format, branch, and submit your work. Following these guidelines is crucial for your submissions to be evaluated correctly.
 
 ### Submission Parameters:
-* Submission Due Date: `September 28, 2024`
-* The branch name for your repo should be: `model-design`
-* What to submit for this assignment:
-    * This markdown (design_a_logical_model.md) should be populated.
-    * Two Entity-Relationship Diagrams (preferably in a pdf, jpeg, png format).
-* What the pull request link should look like for this assignment: `https://github.com/<your_github_username>/sql/pull/<pr_id>`
-    * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
+
+- Submission Due Date: `September 28, 2024`
+- The branch name for your repo should be: `model-design`
+- What to submit for this assignment:
+  - This markdown (design_a_logical_model.md) should be populated.
+  - Two Entity-Relationship Diagrams (preferably in a pdf, jpeg, png format).
+- What the pull request link should look like for this assignment: `https://github.com/<your_github_username>/sql/pull/<pr_id>`
+  - Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
+
 - [ ] Create a branch called `model-design`.
 - [ ] Ensure that the repository is public.
 - [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
