@@ -24,9 +24,9 @@ _Hint, search type 1 vs type 2 slowly changing dimensions._
 
 Bonus: Are there privacy implications to this, why or why not?
 
-```
 ![image info](./images/Answer3.jpg)
 
+```
 There are privacy concerns in both the architectures:
 
 - Unauthorized personal should not have access to this data, as it is sensitive, and has private information.
